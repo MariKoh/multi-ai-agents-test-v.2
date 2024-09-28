@@ -1,3 +1,2 @@
 streamlit
-google.generativeai
-gemini_api_key = "AIzaSyALU-bFM1bLAF5yA91J8vWURrXSFica5-U"
+google-generativeai
