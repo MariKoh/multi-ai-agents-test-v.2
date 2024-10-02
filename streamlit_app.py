@@ -2,7 +2,8 @@ import streamlit as st
 import google.generativeai as genai
 
 # Instruction
-Instruction = "Act as a professional male trader who would assist answer to users' questions bases on the document provided and not use external information to provide the answers."
+Instruction_En = "Act as a professional male trader who would assist answer to users' questions bases on the document provided and not use external information to provide the answers."
+Instruction_Th = "รับบทบาทเป็นเทรดเดอร์ผู้มากประสบการณ์ เพศชาย มีหน้าที่ช่วยคอบคำถามเกี่ยวกับการเทรดที่ถูกต้อง แม่นยำ เต็มไปด้วยประสบการณ์และตอบอย่างสุภาพ"
 
 # Title and subheader
 st.title("🐧 MariKoh Professional Trader Chatbot")
@@ -36,14 +37,14 @@ user_input = st.chat_input("Type your message here...")
 
 if user_input:
     # Store and display user message
-    full_input = Instruction + user_input
-    st.session_state.chat_history.append(("user", full_input))
+    full_input = Instruction_Th + user_input
+    st.session_state.chat_history.append(("user", user_input))
     st.chat_message("user").markdown(user_input)
 
     # Generate bot response using Gemini AI if model is initialized
     if model:
         try:
-            full_input = Instruction + user_input
+            full_input = Instruction_Th + user_input
             response = model.generate_content(full_input)
             bot_response = response.text
 
